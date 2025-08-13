@@ -10,8 +10,9 @@ import UsersManagement from './pages/admin/UsersManagement/UsersManagement';
 import BookingsList from './pages/admin/BookingsList/BookingsList';
 import Events from './pages/user/Events/Events';
 import MyBookings from './pages/user/MyBookings/MyBookings';
+import Navbar from './components/Navbar/Navbar';
 import { initData } from './services/dataService';
-
+ 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [role, setRole] = useState(localStorage.getItem('role'));
@@ -44,9 +45,9 @@ function App() {
 
   return (
     <div className="container mt-4 mb-5">
+      <Navbar role={role} />
       <Routes>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
-
         {/* Admin routes */}
         <Route
           path="/admin/dashboard"

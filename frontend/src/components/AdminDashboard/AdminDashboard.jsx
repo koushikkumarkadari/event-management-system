@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
-import { getUsers, getEvents, getBookings } from '../../services/dataService';
 import './AdminDashboard.css';
+import { getUsers, getEvents, getBookings } from '../../services/dataService';
 
 const AdminDashboard = ({ onLogout }) => {
   const [stats, setStats] = useState({ users: 0, organizers: 0, events: 0, bookings: 0 });
@@ -21,7 +21,7 @@ const AdminDashboard = ({ onLogout }) => {
   return (
     <div className="layout">
       <div className="sidebar">
-        {/* Pass role so AdminSidebar can filter links */}
+        {/* Sidebar only visible on desktop via CSS */}
         <AdminSidebar role={role} />
       </div>
       <div className="content">

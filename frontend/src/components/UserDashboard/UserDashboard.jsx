@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import UserSidebar from '../UserSidebar/UserSidebar';
+import './UserDashboard.css';
 import { getCurrentUser } from '../../services/authService';
 import { getBookingsByUser, getEvents } from '../../services/dataService';
 import { formatDateTime } from '../../utils/date';
-import './UserDashboard.css';
 
 const UserDashboard = ({ onLogout }) => {
   const [registered, setRegistered] = useState([]);
@@ -24,7 +24,10 @@ const UserDashboard = ({ onLogout }) => {
 
   return (
     <div className="layout">
-      <UserSidebar />
+      <div className="sidebar">
+        {/* Sidebar only visible on desktop via CSS */}
+        <UserSidebar />
+      </div>
       <div className="content">
         <div className="header">
           <h1>User Dashboard</h1>

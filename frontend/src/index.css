@@ -101,3 +101,21 @@ h1, h2, h3 {
 .table th {
   background: var(--bg-light);
 }
+
+@media (max-width: 767px) {
+  .layout .sidebar {
+    display: none;
+  }
+  .slider-sidebar {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .layout .sidebar {
+    display: block;
+  }
+  .slider-sidebar {
+    display: none;
+  }
+}
