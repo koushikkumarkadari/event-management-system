@@ -53,7 +53,7 @@ const Login = ({ onLogin }) => {
         <button type="submit" className="btn btn-primary">Login</button>
       </form>
       <div className="hint">
-        Demo users: admin@example.com/admin123
+        Demo users: admin@example.com/admin123, org@example.com/org123, user1@example.com/user123
       </div>
     </div>
   );
