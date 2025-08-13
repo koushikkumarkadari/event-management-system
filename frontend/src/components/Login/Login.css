@@ -1,0 +1,40 @@
+.login-card {
+  max-width: 420px;
+  margin: 4rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  background: white;
+}
+
+.login-card h2 {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+}
+
+.alert {
+  background: #f8d7da;
+  color: #842029;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.hint {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #666;
+}

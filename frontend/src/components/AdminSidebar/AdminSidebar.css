@@ -1,0 +1,19 @@
+.sidebar {
+  background: var(--light-bg);
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.sidebar button {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}

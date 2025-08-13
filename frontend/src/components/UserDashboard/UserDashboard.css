@@ -1,0 +1,22 @@
+.event-list, .upcoming-list {
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.event-list ul, .upcoming-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.event-list li, .upcoming-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.event-list li:last-child,
+.upcoming-list li:last-child {
+  border-bottom: none;
+}
