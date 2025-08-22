@@ -1,4 +1,3 @@
-// src/services/dataService.js
 import usersSeed from '../data/users.json';
 import eventsSeed from '../data/events.json';
 import bookingsSeed from '../data/bookings.json';
@@ -10,20 +9,21 @@ const KEYS = {
   SEEDED: 'seeded',
 };
 
+// Initialize localStorage with seed data
 export function initData() {
   if (localStorage.getItem(KEYS.SEEDED)) return;
 
-  // Ensure IDs are numbers and unique
   const users = usersSeed.map(u => ({ ...u, id: Number(u.id) }));
   const events = eventsSeed.map(e => ({ ...e, id: Number(e.id) }));
   const bookings = bookingsSeed.map(b => ({ ...b, id: Number(b.id) }));
 
-  localStorage.setItem(KEYS.USERS, JSON.stringify(users));
-  localStorage.setItem(KEYS.EVENTS, JSON.stringify(events));
-  localStorage.setItem(KEYS.BOOKINGS, JSON.stringify(bookings));
+  write(KEYS.USERS, users);
+  write(KEYS.EVENTS, events);
+  write(KEYS.BOOKINGS, bookings);
   localStorage.setItem(KEYS.SEEDED, 'true');
 }
 
+// Generic read/write helpers
 function read(key) {
   return JSON.parse(localStorage.getItem(key) || '[]');
 }
@@ -36,7 +36,7 @@ function nextId(items) {
   return items.length ? Math.max(...items.map(i => Number(i.id))) + 1 : 1;
 }
 
-// Users
+// USERS
 export function getUsers() {
   return read(KEYS.USERS);
 }
@@ -47,13 +47,19 @@ export function updateUserRole(userId, role) {
   if (idx >= 0) {
     users[idx].role = role;
     write(KEYS.USERS, users);
+    return users[idx];
   }
-  return users[idx] || null;
+  return null;
 }
 
-// Events
+// EVENTS
 export function getEvents() {
   return read(KEYS.EVENTS);
+}
+
+export function getEventById(eventId) {
+  const events = getEvents();
+  return events.find(e => Number(e.id) === Number(eventId)) || null;
 }
 
 export function addEvent(event) {
@@ -67,12 +73,12 @@ export function addEvent(event) {
 export function deleteEvent(eventId) {
   const events = getEvents().filter(e => Number(e.id) !== Number(eventId));
   write(KEYS.EVENTS, events);
-  // Also remove related bookings
+
   const bookings = getBookings().filter(b => Number(b.eventId) !== Number(eventId));
   write(KEYS.BOOKINGS, bookings);
 }
 
-// Bookings
+// BOOKINGS
 export function getBookings() {
   return read(KEYS.BOOKINGS);
 }
@@ -84,10 +90,16 @@ export function getBookingsByUser(userId) {
 export function addBooking(booking) {
   const bookings = getBookings();
   const exists = bookings.some(
-    b => Number(b.userId) === Number(booking.userId) && Number(b.eventId) === Number(booking.eventId),
+    b => Number(b.userId) === Number(booking.userId) &&
+         Number(b.eventId) === Number(booking.eventId)
   );
   if (exists) return null;
-  const newBooking = { ...booking, id: nextId(bookings), status: booking.status || 'CONFIRMED' };
+
+  const newBooking = {
+    ...booking,
+    id: nextId(bookings),
+    status: booking.status || 'CONFIRMED'
+  };
   bookings.push(newBooking);
   write(KEYS.BOOKINGS, bookings);
   return newBooking;
@@ -98,7 +110,7 @@ export function deleteBooking(bookingId) {
   write(KEYS.BOOKINGS, bookings);
 }
 
-// Helpers to join
+// JOINED BOOKINGS
 export function getJoinedBookings() {
   const users = getUsers();
   const events = getEvents();

@@ -8,6 +8,7 @@ const UserSidebar = () => {
       <button onClick={() => navigate('/user/dashboard')}>Dashboard</button>
       <button onClick={() => navigate('/events')}>View Events</button>
       <button onClick={() => navigate('/my-bookings')}>My Bookings</button>
+      <button onClick={() => navigate('/bookinghistory')}>History</button>
     </div>
   );
 };

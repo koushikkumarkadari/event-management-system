@@ -2,15 +2,12 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login/Login';
-import AdminDashboard from './components/AdminDashboard/AdminDashboard';
 import UserDashboard from './components/UserDashboard/UserDashboard';
-import EventsList from './pages/admin/EventsList/EventsList';
-import CreateEvent from './pages/admin/CreateEvent/CreateEvent';
-import UsersManagement from './pages/admin/UsersManagement/UsersManagement';
-import BookingsList from './pages/admin/BookingsList/BookingsList';
 import Events from './pages/user/Events/Events';
 import MyBookings from './pages/user/MyBookings/MyBookings';
 import Navbar from './components/Navbar/Navbar';
+import ViewEvent from './pages/user/ViewEvent/ViewEvent';
+import BookingHistory from './pages/user/Bookinghistory/Bookinghistory';
 import { initData } from './services/dataService';
  
 function App() {
@@ -48,49 +45,10 @@ function App() {
       <Navbar role={role} />
       <Routes>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        {/* Admin routes */}
-        <Route
-          path="/admin/dashboard"
-          element={
-            <Protected allow={['ADMIN', 'ORGANIZER']}>
-              <AdminDashboard  onLogout={handleLogout} />
-            </Protected>
-          }
-        />
-        <Route
-          path="/admin/events"
-          element={
-            <Protected allow={['ADMIN', 'ORGANIZER']}>
-              <EventsList />
-            </Protected>
-          }
-        />
-        <Route
-          path="/admin/create-event"
-          element={
-            <Protected allow={['ADMIN', 'ORGANIZER']}>
-              <CreateEvent />
-            </Protected>
-          }
-        />
-        <Route
-          path="/admin/users"
-          element={
-            <Protected allow={['ADMIN']}>
-              <UsersManagement />
-            </Protected>
-          }
-        />
-        <Route
-          path="/admin/bookings"
-          element={
-            <Protected allow={['ADMIN', 'ORGANIZER']}>
-              <BookingsList />
-            </Protected>
-          }
-        />
+        
 
         {/* User routes */}
+        <Route path="/user/events/:id" element={<ViewEvent />} />
         <Route
           path="/user/dashboard"
           element={
@@ -106,6 +64,7 @@ function App() {
               <Events />
             </Protected>
           }
+        
         />
         <Route
           path="/my-bookings"
@@ -115,7 +74,14 @@ function App() {
             </Protected>
           }
         />
-
+        <Route
+          path="/bookinghistory"
+          element={
+            <Protected allow={['USER']}>
+              <BookingHistory />
+            </Protected>
+          }
+        />
         {/* Default */}
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to="/login" replace />} />

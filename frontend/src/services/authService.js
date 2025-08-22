@@ -15,10 +15,15 @@ export function login(email, password) {
 }
 
 export function logout() {
+  localStorage.removeItem('users');
+  localStorage.removeItem('events');
+  localStorage.removeItem('bookings');
+  localStorage.removeItem('seeded');
   localStorage.removeItem('token');
   localStorage.removeItem('role');
   localStorage.removeItem('currentUserId');
   localStorage.removeItem('currentUserEmail');
+  localStorage.clear();
 }
 
 export function getCurrentUser() {

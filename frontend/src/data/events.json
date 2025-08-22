@@ -1,4 +1,68 @@
 [
-  { "id": 1, "title": "Tech Meetup", "date": "2025-09-01T10:00:00", "venue": { "name": "Hall A" } },
-  { "id": 2, "title": "Startup Pitch", "date": "2025-09-15T14:00:00", "venue": { "name": "Conference Room" } }
+  {
+    "id": 1,
+    "title": "Tech Meetup",
+    "date": "2025-09-01T10:00:00",
+    "venue": { "name": "Hall A" },
+    "description": "A casual gathering of developers, engineers, and tech enthusiasts to share ideas and network.",
+    "organizer": "Hyderabad Dev Circle",
+    "contactEmail": "meetup@devcircle.in",
+    "tags": ["Networking", "Community", "Tech"],
+    "imageUrl": "/images/tech-meetup.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Startup Pitch",
+    "date": "2025-09-15T14:00:00",
+    "venue": { "name": "Conference Room" },
+    "description": "Early-stage startups pitch their ideas to investors and mentors. Open Q&A and feedback sessions included.",
+    "organizer": "Startup India Hub",
+    "contactEmail": "pitch@startuphub.in",
+    "tags": ["Entrepreneurship", "Funding", "Innovation"],
+    "imageUrl": "/images/startup-pitch.jpg"
+  },
+  {
+    "id": 3,
+    "title": "AI Workshop",
+    "date": "2025-10-05T09:30:00",
+    "venue": { "name": "Lab 2" },
+    "description": "Hands-on workshop covering NLP, computer vision, and model deployment using Python and TensorFlow.",
+    "organizer": "AI Research Lab",
+    "contactEmail": "workshop@airesearch.org",
+    "tags": ["AI", "Machine Learning", "Python"],
+    "imageUrl": "/images/ai-workshop.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Design Sprint",
+    "date": "2025-08-25T13:00:00",
+    "venue": { "name": "Studio B" },
+    "description": "A 5-hour sprint to prototype and test design ideas. Ideal for UX/UI designers and product thinkers.",
+    "organizer": "Creative Studio",
+    "contactEmail": "design@creativestudio.io",
+    "tags": ["Design", "UX", "Prototyping"],
+    "imageUrl": "/images/design-sprint.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Networking Night",
+    "date": "2024-11-20T18:00:00",
+    "venue": { "name": "Main Lobby" },
+    "description": "An informal evening to connect with professionals across tech, design, and business domains.",
+    "organizer": "TechConnect",
+    "contactEmail": "connect@techconnect.org",
+    "tags": ["Networking", "Social", "Career"],
+    "imageUrl": "/images/networking-night.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Hackathon",
+    "date": "2024-12-01T08:00:00",
+    "venue": { "name": "Hall C" },
+    "description": "24-hour coding challenge with prizes for best innovation, design, and execution. Open to all skill levels.",
+    "organizer": "CodeStorm",
+    "contactEmail": "hack@codestorm.dev",
+    "tags": ["Hackathon", "Coding", "Teamwork"],
+    "imageUrl": "/images/hackathon.jpg"
+  }
 ]

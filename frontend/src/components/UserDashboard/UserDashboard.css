@@ -20,3 +20,14 @@
 .upcoming-list li:last-child {
   border-bottom: none;
 }
+.event-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}

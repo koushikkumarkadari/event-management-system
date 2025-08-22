@@ -18,11 +18,7 @@ const Login = ({ onLogin }) => {
       return;
     }
     onLogin(res.token, res.role);
-    if (res.role === 'ADMIN' || res.role === 'ORGANIZER') {
-      navigate('/admin/dashboard');
-    } else {
-      navigate('/user/dashboard');
-    }
+    navigate('/user/dashboard');
   };
 
   return (
@@ -53,7 +49,7 @@ const Login = ({ onLogin }) => {
         <button type="submit" className="btn btn-primary">Login</button>
       </form>
       <div className="hint">
-        Demo users: admin@example.com/admin123, org@example.com/org123, user1@example.com/user123
+        Demo users: user1@example.com/user123
       </div>
     </div>
   );

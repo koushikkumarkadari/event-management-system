@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import UserSidebar from '../UserSidebar/UserSidebar';
 import './Navbar.css';
 
@@ -32,11 +31,7 @@ const Navbar = ({ role }) => {
         </button>
       </nav>
       <div className={`slider-sidebar ${sidebarOpen ? 'open' : ''}`}>
-        {role === 'ADMIN' || role === 'ORGANIZER' ? (
-          <AdminSidebar role={role} />
-        ) : (
           <UserSidebar />
-        )}
       </div>
       {sidebarOpen && <div className="overlay" onClick={handleOverlayClick}></div>}
     </>

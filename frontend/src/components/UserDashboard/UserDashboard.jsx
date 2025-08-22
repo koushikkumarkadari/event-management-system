@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserSidebar from '../UserSidebar/UserSidebar';
 import './UserDashboard.css';
 import { getCurrentUser } from '../../services/authService';
 import { getBookingsByUser, getEvents } from '../../services/dataService';
 import { formatDateTime } from '../../utils/date';
+
 
 const UserDashboard = ({ onLogout }) => {
   const [registered, setRegistered] = useState([]);
@@ -33,24 +35,15 @@ const UserDashboard = ({ onLogout }) => {
           <h1>User Dashboard</h1>
           <button className="btn btn-danger" onClick={onLogout}>Logout</button>
         </div>
-        <div className="event-list">
-          <h3>My Registered Events</h3>
-          <ul>
-            {registered.length === 0 && <li>No registered events</li>}
-            {registered.map(e => (
-              <li key={e.id}>
-                {e.title} — {formatDateTime(e.date)}
-              </li>
-            ))}
-          </ul>
-        </div>
         <div className="upcoming-list">
           <h3>Upcoming Events</h3>
           <ul>
             {upcoming.length === 0 && <li>No upcoming events</li>}
             {upcoming.map(e => (
               <li key={e.id}>
-                {e.title} — {formatDateTime(e.date)}
+                <Link to={`/user/events/${e.id}`} className="event-link">
+                  {e.title} — {formatDateTime(e.date)}
+                </Link>
               </li>
             ))}
           </ul>

@@ -1,0 +1,54 @@
+.view-event {
+  padding: 2rem;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+  background: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.event-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-meta {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.event-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.event-tags {
+  margin-bottom: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.event-image {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
