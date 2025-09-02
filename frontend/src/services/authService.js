@@ -1,8 +1,32 @@
 // src/services/authService.js
 import { getUsers } from './dataService';
+import usersSeed from '../data/users.json';
+import eventsSeed from '../data/events.json';
+import bookingsSeed from '../data/bookings.json';
+
+const KEYS = {
+  USERS: 'users',
+  EVENTS: 'events',
+  BOOKINGS: 'bookings',
+  SEEDED: 'seeded',
+};
+
+function seedLocalStorage() {
+  const users = usersSeed.map(u => ({ ...u, id: Number(u.id) }));
+  const events = eventsSeed.map(e => ({ ...e, id: Number(e.id) }));
+  const bookings = bookingsSeed.map(b => ({ ...b, id: Number(b.id) }));
+
+  localStorage.setItem(KEYS.USERS, JSON.stringify(users));
+  localStorage.setItem(KEYS.EVENTS, JSON.stringify(events));
+  localStorage.setItem(KEYS.BOOKINGS, JSON.stringify(bookings));
+  localStorage.setItem(KEYS.SEEDED, 'true');
+}
 
 export function login(email, password) {
-  const users = getUsers();
+  // Always seed data on login
+  seedLocalStorage();
+
+  const users = JSON.parse(localStorage.getItem(KEYS.USERS) || '[]');
   const user = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.password === password);
   if (!user) return null;
 
@@ -15,14 +39,6 @@ export function login(email, password) {
 }
 
 export function logout() {
-  localStorage.removeItem('users');
-  localStorage.removeItem('events');
-  localStorage.removeItem('bookings');
-  localStorage.removeItem('seeded');
-  localStorage.removeItem('token');
-  localStorage.removeItem('role');
-  localStorage.removeItem('currentUserId');
-  localStorage.removeItem('currentUserEmail');
   localStorage.clear();
 }
 

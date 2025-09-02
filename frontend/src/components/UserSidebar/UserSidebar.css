@@ -1,18 +1,31 @@
 .sidebar {
-  background: var(--light-bg);
-  padding: 1.5rem;
+  background: #2a6fdb;
+  padding: 2rem 1rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  box-shadow: 2px 0 8px rgba(42, 111, 219, 0.07);
 }
 
 .sidebar button {
   display: block;
-  background: none;
+  background: #fff;
+  color: #2a6fdb;
   border: none;
-  padding: 0.5rem;
+  padding: 0.7rem 1rem;
   text-align: left;
   width: 100%;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 2px;
+  box-shadow: 0 1px 4px rgba(42, 111, 219, 0.04);
 }
 
 .sidebar button:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: #1d54a4;
+  color: #fff;
 }

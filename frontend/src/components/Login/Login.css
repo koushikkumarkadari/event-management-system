@@ -1,40 +1,84 @@
 .login-card {
-  max-width: 420px;
+  max-width: 350px;
   margin: 4rem auto;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: var(--radius);
-  background: white;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(42, 111, 219, 0.08);
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-card h2 {
-  margin-bottom: 1rem;
+  color: #2a6fdb;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  width: 100%;
+  margin-bottom: 1.2rem;
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"],
-input[type="datetime-local"] {
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #1d54a4;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+.form-group input {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: var(--radius);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e0e7ef;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f7f7f7;
+  transition: border 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #2a6fdb;
+  outline: none;
+  background: #fff;
+}
+
+.btn-primary {
+  width: 100%;
+  background: #2a6fdb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #1d54a4;
 }
 
 .alert {
-  background: #f8d7da;
-  color: #842029;
-  padding: 0.5rem;
-  border-radius: var(--radius);
+  width: 100%;
+  background: #f3f8ff;
+  color: #d9534f;
+  border: 1px solid #d9534f;
+  border-radius: 6px;
+  padding: 0.6rem;
   margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.98rem;
 }
 
 .hint {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  color: #666;
+  margin-top: 1.5rem;
+  color: #888;
+  font-size: 0.95rem;
+  text-align: center;
 }

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login as loginService } from '../../services/authService';
 import './Login.css';
 
 const Login = ({ onLogin }) => {
@@ -12,12 +11,11 @@ const Login = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
-    const res = loginService(email.trim(), password);
+    const res = onLogin(email.trim(), password);
     if (!res) {
       setError('Invalid email or password');
       return;
     }
-    onLogin(res.token, res.role);
     navigate('/user/dashboard');
   };
 

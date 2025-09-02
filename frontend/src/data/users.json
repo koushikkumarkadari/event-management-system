@@ -1,5 +1,4 @@
 [
-  
   { "id": 3, "name": "User One", "email": "user1@example.com", "password": "user123", "role": "USER" },
   { "id": 4, "name": "User Two", "email": "user2@example.com", "password": "user123", "role": "USER" }
 ]

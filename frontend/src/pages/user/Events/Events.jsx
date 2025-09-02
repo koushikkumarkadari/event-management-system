@@ -4,11 +4,12 @@ import UserSidebar from '../../../components/UserSidebar/UserSidebar';
 import { getEvents, addBooking, getBookingsByUser } from '../../../services/dataService';
 import { getCurrentUser } from '../../../services/authService';
 import { formatDateTime } from '../../../utils/date';
-import '../../../App.css'
+import './Events.css';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [myBookings, setMyBookings] = useState([]);
+  const [search, setSearch] = useState('');
 
   const load = () => {
     const allEvents = getEvents();
@@ -37,6 +38,10 @@ const Events = () => {
     load();
   };
 
+  const filteredEvents = events.filter(e =>
+    (e.title || '').toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="layout">
       <div className="sidebar">
@@ -45,9 +50,16 @@ const Events = () => {
       </div>
       <div className="content">
         <h2>Available Events</h2>
+        <input
+          type="text"
+          placeholder="Search by event title..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          style={{ marginBottom: 16, width: '100%', padding: 8 }}
+        />
         <div className="grid" style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))' }}>
-          {events.length === 0 && <div className="text-muted">No events available.</div>}
-          {events.map(e => (
+          {filteredEvents.length === 0 && <div className="text-muted">No events available.</div>}
+          {filteredEvents.map(e => (
             <Link to={`/user/events/${e.id}`} className="card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3>{e.title}</h3>
               <p>{formatDateTime(e.date)} • {e.venue?.name}</p>

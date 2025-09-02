@@ -1,56 +1,96 @@
 .booking-history-container {
-  padding: 24px;
+  padding: 2rem;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(42,111,219,0.08);
   width: 100%;
+  margin: 2rem auto;
 }
 
 .booking-history-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2a6fdb;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
 .booking-history-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(42,111,219,0.04);
 }
 
 .booking-history-header-row {
-  background: #f3f4f6;
-  color: #4b5563;
+  background: #f3f8ff;
+  color: #1d54a4;
 }
 
 .booking-history-header {
-  padding: 12px;
+  padding: 14px 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 2px solid #e0e7ef;
 }
 
 .booking-history-row {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e0e7ef;
   transition: background 0.2s;
 }
 
 .booking-history-row:hover {
-  background: #f9fafb;
+  background: #f3f8ff;
 }
 
 .booking-history-cell {
-  padding: 12px;
+  padding: 12px 10px;
+  font-size: 1rem;
 }
 
 .booking-history-status.status-confirmed {
   color: #16a34a;
   font-weight: 600;
+  background: #e6fbe8;
+  border-radius: 4px;
+  padding: 4px 10px;
+  display: inline-block;
 }
 
 .booking-history-status.status-cancelled {
   color: #dc2626;
   font-weight: 600;
+  background: #ffeaea;
+  border-radius: 4px;
+  padding: 4px 10px;
+  display: inline-block;
 }
 
 .booking-history-status.status-pending {
   color: #ca8a04;
   font-weight: 600;
+  background: #fffbe6;
+  border-radius: 4px;
+  padding: 4px 10px;
+  display: inline-block;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e7ef;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background: #f7f7f7;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #2a6fdb;
+  background: #fff;
+  outline: none;
 }

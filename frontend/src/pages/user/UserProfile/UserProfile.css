@@ -1,0 +1,102 @@
+.profile-card {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(42, 111, 219, 0.1);
+  padding: 2rem 1.5rem;
+}
+
+.profile-title {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #2a6fdb;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 28px;
+  background: #f3f8ff;
+  border-radius: 10px;
+  padding: 1rem 0;
+  box-shadow: 0 1px 6px rgba(42, 111, 219, 0.04);
+}
+
+.profile-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 2px solid #2a6fdb;
+  object-fit: cover;
+  background: #fff;
+}
+
+.profile-info div {
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  color: #1d54a4;
+}
+
+.profile-info strong {
+  color: #2a6fdb;
+  font-weight: 600;
+}
+
+.profile-form {
+  margin-top: 18px;
+}
+
+.profile-form h4 {
+  color: #1d54a4;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.profile-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e0e7ef;
+  font-size: 1rem;
+  background: #f7f7f7;
+  transition: border 0.2s;
+}
+
+.profile-input:focus {
+  border-color: #2a6fdb;
+  background: #fff;
+  outline: none;
+}
+
+.profile-btn {
+  width: 100%;
+  padding: 10px;
+  background: #2a6fdb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+
+.profile-btn:hover {
+  background: #1d54a4;
+}
+
+.profile-message {
+  margin-top: 10px;
+  color: #dc2626;
+  text-align: center;
+  font-size: 0.98rem;
+}

@@ -4,10 +4,11 @@ import { getBookingsByUser, getEvents } from "../../../services/dataService";
 import { formatDateTime } from "../../../utils/date";
 import "./Bookinghistory.css";
 import UserSidebar from "../../../components/UserSidebar/UserSidebar";
-import '../../../App.css';
+
 
 export default function BookingHistory() {
   const [rows, setRows] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     const me = getCurrentUser();
@@ -16,7 +17,6 @@ export default function BookingHistory() {
     const events = getEvents();
     const today = new Date();
 
-    // Past attended events: event date < today && status CONFIRMED
     const attended = bookings
       .filter((b) => {
         const event = events.find((e) => Number(e.id) === Number(b.eventId));
@@ -35,6 +35,10 @@ export default function BookingHistory() {
     setRows(attended);
   }, []);
 
+  const filteredRows = rows.filter(r =>
+    r.eventTitle.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="layout" >
       <div className="sidebar">
@@ -43,6 +47,13 @@ export default function BookingHistory() {
       </div>
       <div className="booking-history-container">
         <h2 className="booking-history-title">Booking History</h2>
+        <input
+          type="text"
+          placeholder="Search by event title..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          style={{ marginBottom: 16, width: '100%', padding: 8 }}
+        />
         <table className="booking-history-table">
           <thead>
             <tr className="booking-history-header-row">
@@ -53,14 +64,14 @@ export default function BookingHistory() {
             </tr>
           </thead>
           <tbody>
-            {rows.length === 0 && (
+            {filteredRows.length === 0 && (
               <tr>
                 <td colSpan="4" style={{ textAlign: "center" }}>
                   No past attended events.
                 </td>
               </tr>
             )}
-            {rows.map((r) => (
+            {filteredRows.map((r) => (
               <tr key={r.id} className="booking-history-row">
                 <td className="booking-history-cell">{r.id}</td>
                 <td className="booking-history-cell">{r.eventTitle}</td>

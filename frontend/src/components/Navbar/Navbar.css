@@ -2,17 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #222;
+  background: #2a6fdb;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.5rem;
   position: relative;
+  box-shadow: 0 2px 8px rgba(42,111,219,0.08);
 }
 
 .navbar-brand a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
 .navbar-links {
@@ -23,9 +25,23 @@
 .navbar-links a {
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  transition: background 0.2s;
 }
+
+.navbar-links a:hover {
+  background: #1d54a4;
+}
+
 .hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
   display: none;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .hamburger-bar {
@@ -40,15 +56,9 @@
     display: none;
   }
   .hamburger {
-    background: none;
-    border: none;
-    cursor: pointer;
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-    }
+  }
 }
-
 
 .slider-sidebar {
   position: fixed;
@@ -56,10 +66,11 @@
   left: -220px;
   width: 200px;
   height: 100%;
-  background: #222;
+  background: #2a6fdb;
   color: #fff;
   transition: left 0.3s;
   z-index: 1001;
+  box-shadow: 2px 0 8px rgba(42,111,219,0.08);
 }
 
 .slider-sidebar.open {
