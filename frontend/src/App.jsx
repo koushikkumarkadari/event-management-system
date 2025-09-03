@@ -93,7 +93,7 @@ function App() {
           path="/user/profile"
           element={
             <Protected allow={['USER']}>
-              <UserProfile />
+              <UserProfile onLogout={handleLogout} />
             </Protected>
           }
         />

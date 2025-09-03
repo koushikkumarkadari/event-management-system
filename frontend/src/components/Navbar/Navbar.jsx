@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import UserSidebar from '../UserSidebar/UserSidebar';
 import './Navbar.css';
 
 const Navbar = ({ role }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleHamburgerClick = () => {
     setSidebarOpen(!sidebarOpen);
@@ -20,6 +21,30 @@ const Navbar = ({ role }) => {
         <div className="navbar-brand">
           <Link to="/">Event Manager</Link>
         </div>
+        <div className="navbar-icons">
+          <button
+            className="icon-btn"
+            title="Notifications"
+            onClick={() => navigate('/user/notifications')}
+          >
+            {/* Bell emoji, replace with SVG or image if you want */}
+            <span role="img" aria-label="Notifications" style={{ fontSize: '1.5rem' }}>🔔</span>
+          </button>
+          <button
+            className="icon-btn profile-btn"
+            title="Profile"
+            onClick={() => navigate('/user/profile')}
+          >
+            {/* Circle user emoji, replace with SVG or image if you want */}
+            <span role="img" aria-label="Profile" style={{
+              fontSize: '1.5rem',
+              borderRadius: '50%',
+              background: '#fff',
+              color: '#2a6fdb',
+              padding: '0.2em'
+            }}>👤</span>
+          </button>
+        </div>
         <button
           className="hamburger"
           onClick={handleHamburgerClick}
@@ -31,7 +56,7 @@ const Navbar = ({ role }) => {
         </button>
       </nav>
       <div className={`slider-sidebar ${sidebarOpen ? 'open' : ''}`}>
-          <UserSidebar />
+        <UserSidebar />
       </div>
       {sidebarOpen && <div className="overlay" onClick={handleOverlayClick}></div>}
     </>

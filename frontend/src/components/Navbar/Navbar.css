@@ -84,3 +84,31 @@
   background: rgba(0,0,0,0.3);
   z-index: 1000;
 }
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2em;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.icon-btn:hover {
+  background: #f3f8ff;
+}
+
+.profile-btn span {
+  border-radius: 50%;
+  background: #fff;
+  color: #2a6fdb;
+  padding: 0.2em;
+}

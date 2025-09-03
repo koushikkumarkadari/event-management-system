@@ -3,9 +3,9 @@ import { getCurrentUser } from '../../../services/authService';
 import { getUsers } from '../../../services/dataService';
 import defaultProfile from '../../../assets/default-profile.jpg';
 import './UserProfile.css';
-import UserSidebar from '../../../components/UserSidebar/UserSidebar'; // Add this import
+import UserSidebar from '../../../components/UserSidebar/UserSidebar';
 
-const UserProfile = () => {
+const UserProfile = ({ onLogout }) => {
   const [user, setUser] = useState(null);
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -78,6 +78,9 @@ const UserProfile = () => {
           </button>
           {message && <div className="profile-message">{message}</div>}
         </form>
+        <button className="profile-btn" style={{ marginTop: '18px', background: '#d9534f' }} onClick={onLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );

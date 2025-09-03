@@ -33,7 +33,7 @@ const UserDashboard = ({ onLogout }) => {
       <div className="content">
         <div className="header">
           <h1>User Dashboard</h1>
-          <button className="btn btn-danger" onClick={onLogout}>Logout</button>
+          {/* Remove the logout button from here */}
         </div>
         <div className="upcoming-list">
           <h3>Upcoming Events</h3>
