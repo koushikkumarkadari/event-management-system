@@ -6,12 +6,13 @@
   flex-direction: column;
   gap: 0.7rem;
   box-shadow: 2px 0 8px rgba(42, 111, 219, 0.07);
+  color: white;
 }
 
 .sidebar button {
   display: block;
   background: #fff;
-  color: #2a6fdb;
+  color: white;
   border: none;
   padding: 0.7rem 1rem;
   text-align: left;

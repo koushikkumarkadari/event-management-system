@@ -25,7 +25,8 @@ h1, h2, h3 {
 
 .sidebar {
   flex: 0 0 200px;
-  background: var(--bg-light);
+  /*background: var(--bg-light);*/
+  background: #2F4F4F;
   padding: 1rem;
 }
 

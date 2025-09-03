@@ -7,8 +7,9 @@ const UserSidebar = () => {
     <div className="sidebar">
       <button onClick={() => navigate('/user/dashboard')}>Dashboard</button>
       <button onClick={() => navigate('/events')}>View Events</button>
-      <button onClick={() => navigate('/my-bookings')}>My Bookings</button>
+      {/* <button onClick={() => navigate('/my-bookings')}>My Bookings</button> */}
       <button onClick={() => navigate('/bookinghistory')}>History</button>
+      <button onClick={() => navigate('/bookevent')}>Bookevent</button>
       {/* Removed My Profile and Notifications buttons */}
     </div>
   );

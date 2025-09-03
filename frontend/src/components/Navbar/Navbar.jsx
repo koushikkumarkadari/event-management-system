@@ -40,7 +40,7 @@ const Navbar = ({ role }) => {
               fontSize: '1.5rem',
               borderRadius: '50%',
               background: '#fff',
-              color: '#2a6fdb',
+              color: '#2F4F4F',
               padding: '0.2em'
             }}>👤</span>
           </button>
