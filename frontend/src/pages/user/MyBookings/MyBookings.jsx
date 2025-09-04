@@ -6,7 +6,8 @@ import { formatDateTime } from '../../../utils/date';
 import './MyBookings.css';
 
 const MyBookings = () => {
-  const [rows, setRows] = useState([]);
+  const [upcomingRows, setUpcomingRows] = useState([]);
+  const [pastRows, setPastRows] = useState([]);
   const [search, setSearch] = useState('');
 
   const load = () => {
@@ -16,6 +17,7 @@ const MyBookings = () => {
     const events = getEvents();
     const today = new Date();
 
+    // Upcoming events: event date >= today
     const upcoming = bookings
       .filter(b => {
         const event = events.find(e => Number(e.id) === Number(b.eventId));
@@ -26,7 +28,19 @@ const MyBookings = () => {
         return { ...b, event };
       });
 
-    setRows(upcoming);
+    // Past attended events: event date < today and status CONFIRMED
+    const past = bookings
+      .filter(b => {
+        const event = events.find(e => Number(e.id) === Number(b.eventId));
+        return event && new Date(event.date) < today && b.status === 'CONFIRMED';
+      })
+      .map(b => {
+        const event = events.find(e => Number(e.id) === Number(b.eventId));
+        return { ...b, event };
+      });
+
+    setUpcomingRows(upcoming);
+    setPastRows(past);
   };
 
   useEffect(() => {
@@ -40,14 +54,16 @@ const MyBookings = () => {
     }
   };
 
-  const filteredRows = rows.filter(r =>
+  const filteredUpcoming = upcomingRows.filter(r =>
+    (r.event?.title || '').toLowerCase().includes(search.toLowerCase())
+  );
+  const filteredPast = pastRows.filter(r =>
     (r.event?.title || '').toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <div className="layout">
       <div className="sidebar">
-        {/* Sidebar only visible on desktop via CSS */}
         <UserSidebar />
       </div>
       <div className="content">
@@ -59,6 +75,8 @@ const MyBookings = () => {
           onChange={e => setSearch(e.target.value)}
           style={{ marginBottom: 16, width: '100%', padding: 8 }}
         />
+
+        <h3>Upcoming Registered Events</h3>
         <table className="table">
           <thead>
             <tr>
@@ -66,10 +84,10 @@ const MyBookings = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredRows.length === 0 && (
+            {filteredUpcoming.length === 0 && (
               <tr><td colSpan="5" style={{ textAlign: 'center' }}>No upcoming bookings.</td></tr>
             )}
-            {filteredRows.map((r, i) => (
+            {filteredUpcoming.map((r, i) => (
               <tr key={r.id}>
                 <td>{i + 1}</td>
                 <td>{r.event?.title || '—'}</td>
@@ -78,6 +96,28 @@ const MyBookings = () => {
                 <td>
                   <button className="btn btn-danger" onClick={() => handleCancel(r.id)}>Cancel</button>
                 </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <h3 style={{ marginTop: '2rem' }}>Past Attended Events</h3>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>#</th><th>Event</th><th>Date</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredPast.length === 0 && (
+              <tr><td colSpan="4" style={{ textAlign: 'center' }}>No past attended events.</td></tr>
+            )}
+            {filteredPast.map((r, i) => (
+              <tr key={r.id}>
+                <td>{i + 1}</td>
+                <td>{r.event?.title || '—'}</td>
+                <td>{r.event ? formatDateTime(r.event.date) : '—'}</td>
+                <td>{r.status}</td>
               </tr>
             ))}
           </tbody>

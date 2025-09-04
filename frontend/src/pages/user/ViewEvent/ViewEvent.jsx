@@ -39,9 +39,9 @@ const ViewEvent = () => {
       setRegistered(true);
     }
   };
-
+  
   if (!event) return null;
-
+  console.log(event.imageUrl);
   return (
     <div className="layout">
       <div className="sidebar">

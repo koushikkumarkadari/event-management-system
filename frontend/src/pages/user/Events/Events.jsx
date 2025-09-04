@@ -60,7 +60,7 @@ const Events = () => {
         <div className="grid" style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))' }}>
           {filteredEvents.length === 0 && <div className="text-muted">No events available.</div>}
           {filteredEvents.map(e => (
-            <Link to={`/user/events/${e.id}`} className="card" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link key={e.id} to={`/user/events/${e.id}`} className="card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3>{e.title}</h3>
               <p>{formatDateTime(e.date)} • {e.venue?.name}</p>
             </Link>

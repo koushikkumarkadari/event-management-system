@@ -8,7 +8,7 @@
     "organizer": "Hyderabad Dev Circle",
     "contactEmail": "meetup@devcircle.in",
     "tags": ["Networking", "Community", "Tech"],
-    "imageUrl": "/images/tech-meetup.jpg"
+    "imageUrl": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/A1aB7x6VPpt5aaLK/we-create-events-hyderabad--event-planners-hyd-channel9events-AVL1q8zqqQClD0ga.jpg"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "organizer": "Startup India Hub",
     "contactEmail": "pitch@startuphub.in",
     "tags": ["Entrepreneurship", "Funding", "Innovation"],
-    "imageUrl": "/images/startup-pitch.jpg"
+    "imageUrl": "https://www.spicenews.com.au/wp-content/uploads/2024/06/Upwards-trend-Report-shows-bright-future-for-events-industry-Copy.jpg"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "organizer": "AI Research Lab",
     "contactEmail": "workshop@airesearch.org",
     "tags": ["AI", "Machine Learning", "Python"],
-    "imageUrl": "/images/ai-workshop.jpg"
+    "imageUrl": "https://localmedia.org/wp-content/uploads/2021/06/events-1.png"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "organizer": "Creative Studio",
     "contactEmail": "design@creativestudio.io",
     "tags": ["Design", "UX", "Prototyping"],
-    "imageUrl": "/images/design-sprint.jpg"
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLig1H5cfDbpeQEeeMn1zGuHLRJZ87Y-GT2w&s"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "organizer": "TechConnect",
     "contactEmail": "connect@techconnect.org",
     "tags": ["Networking", "Social", "Career"],
-    "imageUrl": "/images/networking-night.jpg"
+    "imageUrl": "https://godreamcast.com/blog/wp-content/uploads/2024/12/conference-inperson-events-1024x682.jpg"
   },
   {
     "id": 6,
@@ -63,6 +63,6 @@
     "organizer": "CodeStorm",
     "contactEmail": "hack@codestorm.dev",
     "tags": ["Hackathon", "Coding", "Teamwork"],
-    "imageUrl": "/images/hackathon.jpg"
+    "imageUrl": "https://www.oyorooms.com/blog/wp-content/uploads/2018/02/event.jpg"
   }
 ]

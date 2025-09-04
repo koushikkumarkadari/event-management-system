@@ -1,7 +1,7 @@
 [
   { "id": 1, "userId": 3, "eventId": 1, "status": "CONFIRMED" },
   { "id": 2, "userId": 3, "eventId": 2, "status": "PENDING" },
-  { "id": 3, "userId": 3, "eventId": 3, "status": "CANCELLED" },
+  { "id": 3, "userId": 3, "eventId": 3, "status": "PENDING" },
   {"id":3,"userId":3,"eventId":6,"status":"CONFIRMED"},
   {"id":4,"userId":3,"eventId":5,"status":"CONFIRMED"}
 ]

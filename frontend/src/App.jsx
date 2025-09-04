@@ -4,13 +4,13 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login/Login';
 import UserDashboard from './components/UserDashboard/UserDashboard';
 import Events from './pages/user/Events/Events';
-// import MyBookings from './pages/user/MyBookings/MyBookings';
+import MyBookings from './pages/user/MyBookings/MyBookings';
 import Navbar from './components/Navbar/Navbar';
 import ViewEvent from './pages/user/ViewEvent/ViewEvent';
-import BookingHistory from './pages/user/Bookinghistory/Bookinghistory';
+//import BookingHistory from './pages/user/Bookinghistory/Bookinghistory';
 import UserProfile from './pages/user/UserProfile/UserProfile';
 import Notifications from './pages/user/Notifications/Notifications';
-import Bookevent from './pages/user/Bookevent/Bookevent';
+//import Bookevent from './pages/user/Bookevent/Bookevent';
 
 import { login, logout } from './services/authService';
 
@@ -74,15 +74,15 @@ function App() {
             </Protected>
           }
         />
-        {/* //<Route
+        <Route
           path="/my-bookings"
           element={
             <Protected allow={['USER']}>
               <MyBookings />
             </Protected>
           }
-        />// */}
-        <Route
+        />
+        {/*<Route
           path="/bookinghistory"
           element={
             <Protected allow={['USER']}>
@@ -97,7 +97,7 @@ function App() {
               <Bookevent />
             </Protected>
           }
-        />
+        />*/}
         <Route
           path="/user/profile"
           element={
